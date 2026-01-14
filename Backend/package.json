@@ -1,0 +1,26 @@
+{
+  "name": "gestionabsences",
+  "version": "1.0.0",
+  "description": "Gestion des absences",
+  "homepage": "https://github.com/Pang-Jaruphong/GestionAbsences#readme",
+  "bugs": {
+    "url": "https://github.com/Pang-Jaruphong/GestionAbsences/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pang-Jaruphong/GestionAbsences.git"
+  },
+  "license": "ISC",
+  "author": "Groupe",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.16.0",
+    "nodemon": "^3.1.11"
+  }
+}

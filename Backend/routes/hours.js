@@ -5,7 +5,7 @@ const hoursRouter = express.Router();
 
 hoursRouter.get("/", async (req, res) => {
     try {
-        const students = await dbhours.getAllHours();
+        const hours = await dbhours.getAllHours();
         res.json(hours);
     } catch (error) {
         res.status(500).json({error:error.message})

@@ -6,7 +6,7 @@ const dbabsences = {
         try {
             con = await db.connectToDatabase();
             const sqlQuery = `SELECT * FROM absences`
-            const [row] = await con.query(sqlQuery);
+            const [rows] = await con.query(sqlQuery);
             return rows;
         } catch (error) {
             console.error(error);

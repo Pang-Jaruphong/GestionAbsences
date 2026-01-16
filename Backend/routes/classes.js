@@ -5,7 +5,7 @@ const classesRouter = express.Router();
 
 classesRouter.get("/", async (req, res) => {
     try {
-        const classes = await dbclasses.getAllclasses();
+        const classes = await dbclasses.getAllClasses();
         res.json(classes);
     } catch (error) {
         res.status(500).json({error:error.message})

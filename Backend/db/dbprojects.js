@@ -6,7 +6,7 @@ const dbprojects = {
         try {
             con = await db.connectToDatabase();
             const sqlQuery = `SELECT * FROM projects`
-            const [row] = await con.query(sqlQuery);
+            const [rows] = await con.query(sqlQuery);
             return rows;
         } catch (error) {
             console.error(error);

@@ -16,8 +16,8 @@ app.use('/projects', projectsRouter);
 app.use('/students', studentsRouter);
 app.use('/teachers', teachersRouter);
 app.use('/absences', absencesRouter);
-app.use('classes', classesRouter);
-app.use('hours', hoursRouter);
+app.use('/classes', classesRouter);
+app.use('/hours', hoursRouter);
 
 app.get('/', (req, res) => {
     res.send('Système de gestion des absences opérationnel !');

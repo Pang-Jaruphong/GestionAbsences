@@ -43,7 +43,7 @@ DROP TABLE IF EXISTS `MissClasse`.`Classes` ;
 CREATE TABLE IF NOT EXISTS `MissClasse`.`Classes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Name_year` VARCHAR(30) NOT NULL,
-  `Classe` VARCHAR(30) NOT NULL,
+  `Salle` VARCHAR(30) NOT NULL,
   `Teachers_id` INT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `Name_year_UNIQUE` (`Name_year` ASC) VISIBLE,

@@ -11,7 +11,7 @@ const db = {
             host: 'localhost',
             user: 'root',
             password: '',
-            database: ''
+            database: 'missclasse'
         });
         return con;
     },

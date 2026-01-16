@@ -12,4 +12,4 @@ absencesRouter.get("/", async (req, res) => {
     }
 });
 
-export default absencesRouter();
+export default absencesRouter;

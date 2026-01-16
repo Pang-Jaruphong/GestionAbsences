@@ -12,4 +12,4 @@ teachersRouter.get("/", async (req, res) => {
     }
 });
 
-export default teachersRouter();
+export default teachersRouter;

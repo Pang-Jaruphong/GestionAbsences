@@ -1,0 +1,5 @@
+# Sécurité : ne jamais pousser les identifiants
+.env
+node_modules/
+.idea/
+*.log

@@ -27,7 +27,7 @@ const dbclassesHours = {
             con = await db.connectToDatabase();
             const sqlQuery = `
                 SELECT 
-                    c.Name_year AS Class, c.Salle, t.acronyme,
+                    c.Name_year AS Class, c.Salle, t.acronyme AS Enseignant,
                     h.date, h.period
                 FROM classes_has_hours chh
                 JOIN classes c ON chh.Classes_id = c.id

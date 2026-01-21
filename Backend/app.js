@@ -6,6 +6,7 @@ import teachersRouter from "./routes/teachers.js";
 import absencesRouter from "./routes/absences.js";
 import classesRouter from "./routes/classes.js";
 import hoursRouter from "./routes/hours.js";
+import classesHoursRouter from "./routes/classesHours.js";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use('/teachers', teachersRouter);
 app.use('/absences', absencesRouter);
 app.use('/classes', classesRouter);
 app.use('/hours', hoursRouter);
+app.use('/classesHours', classesHoursRouter)
 
 app.get('/', (req, res) => {
     res.send('Système de gestion des absences opérationnel !');

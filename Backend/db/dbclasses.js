@@ -5,7 +5,12 @@ const dbclasses = {
         let con;
         try {
             con = await db.connectToDatabase();
-            const sqlQuery = `SELECT * FROM classes`
+            const sqlQuery = `
+                SELECT 
+                    c.Name_year as 'La classe', c.Salle,
+                    t.Acronyme as Prof
+                FROM classes c
+                JOIN teachers t ON c.teachers_id = t.id`
             const [rows] = await con.query(sqlQuery);
             return rows;
         } catch (error) {

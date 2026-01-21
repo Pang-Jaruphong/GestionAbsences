@@ -87,5 +87,5 @@ INSERT INTO students (Lastname, firstname, email, phone, classes_id, projects_id
 ('Yilmaz','Furkan','furkan.yilmaz@gmail.com','0765327532',3,1);
 
 INSERT INTO absences (STATUS, JustifiedRuling, Pattern, Hours_id, students_id) VALUES
-('Absent',0,'malade',1,1),students
+('Absent',0,'malade',1,1),
 ('Retard',1,'Beaucoup de trafic',2,2);

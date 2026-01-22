@@ -19,7 +19,8 @@ const dbclassesHours = {
 }
 */
 
-// aide par Gemini
+// aide par Gemini pour voir 3 tables en table jointe
+// Afficher la classe qui a les cours MA-Métier avec l'enseignant dans le jour et les périodes
 const dbclassesHours = {
     getAllClassesHours : async () =>{
         let con;
@@ -27,7 +28,7 @@ const dbclassesHours = {
             con = await db.connectToDatabase();
             const sqlQuery = `
                 SELECT 
-                    c.Name_year AS Class, c.Salle, t.acronyme,
+                    c.Name_year AS Class, c.Salle, t.acronyme AS Enseignant,
                     h.date, h.period
                 FROM classes_has_hours chh
                 JOIN classes c ON chh.Classes_id = c.id

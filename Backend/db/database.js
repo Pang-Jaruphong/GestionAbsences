@@ -12,11 +12,7 @@ const db = {
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD,
-<<<<<<< HEAD
             database: process.env.DB_NAME,
-=======
-            database: process.env.DB_NAME
->>>>>>> a72916357c37801732721a26c99e4491adf47cf0
         });
         return con;
     },

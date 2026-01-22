@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="d34a7dbb-7614-445a-a58c-d2cb1b69e6f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Backend/db/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/database.js" afterDir="false" />
+=======
+    <list default="true" id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="Modifier le script">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/dbclassesHours.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/dbclassesHours.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/dbstudents.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/dbstudents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/routes/students.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/students.js" afterDir="false" />
+>>>>>>> fb7e79ad2357b62b7b5d43aad9fbf483c7cb62ad
     </list>
 =======
     <list default="true" id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="Modifier le script" />
@@ -98,9 +106,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pv82wpf/IdeaProjects/GestionAbsences&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pv82wpf/IdeaProjects/GestionAbsences/Doc/BD&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -111,10 +120,15 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pv82wpf\IdeaProjects\GestionAbsences\Doc\BD" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pv82wpf\IdeaProjects\GestionAbsences\Doc\BD" />
+      <recent name="C:\Users\pv82wpf\IdeaProjects\GestionAbsences\Doc\MLD" />
+      <recent name="C:\Users\pv82wpf\IdeaProjects\GestionAbsences\Doc\MCD" />
       <recent name="C:\Users\pv82wpf\IdeaProjects\GestionAbsences\Doc" />
       <recent name="C:\Users\pv82wpf\IdeaProjects\GestionAbsences\Backend" />
-      <recent name="C:\Users\pv82wpf\IdeaProjects\GestionAbsences\node_modules" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -146,7 +160,12 @@
       <workItem from="1768394328398" duration="18183000" />
       <workItem from="1768555330108" duration="11371000" />
       <workItem from="1768813739998" duration="14374000" />
+<<<<<<< HEAD
       <workItem from="1768912263818" duration="1545000" />
+=======
+      <workItem from="1768912263818" duration="30050000" />
+      <workItem from="1769066445488" duration="50000" />
+>>>>>>> fb7e79ad2357b62b7b5d43aad9fbf483c7cb62ad
     </task>
     <task id="LOCAL-00001" summary="Modifier le script">
       <option name="closed" value="true" />

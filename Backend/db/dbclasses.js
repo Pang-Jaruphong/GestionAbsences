@@ -8,7 +8,7 @@ const dbclasses = {
             const sqlQuery = `
                 SELECT 
                     c.Name_year as 'La classe', c.Salle,
-                    t.Acronyme as Prof
+                    t.Acronyme as 'Maître de classe' 
                 FROM classes c
                 JOIN teachers t ON c.teachers_id = t.id`
             const [rows] = await con.query(sqlQuery);

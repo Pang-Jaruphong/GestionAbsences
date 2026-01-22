@@ -19,7 +19,8 @@ const dbclassesHours = {
 }
 */
 
-// aide par Gemini
+// aide par Gemini pour voir 3 tables en table jointe
+// Afficher la classe qui a les cours MA-Métier avec l'enseignant dans le jour et les périodes
 const dbclassesHours = {
     getAllClassesHours : async () =>{
         let con;

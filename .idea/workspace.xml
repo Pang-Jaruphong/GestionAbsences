@@ -4,12 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="Modifier le script" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <list default="true" id="d34a7dbb-7614-445a-a58c-d2cb1b69e6f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/db/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/database.js" afterDir="false" />
+=======
+    <list default="true" id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="Modifier le script">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/dbclassesHours.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/dbclassesHours.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/dbstudents.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/dbstudents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/routes/students.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/students.js" afterDir="false" />
+>>>>>>> fb7e79ad2357b62b7b5d43aad9fbf483c7cb62ad
+    </list>
+=======
+    <list default="true" id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="Modifier le script" />
+>>>>>>> a72916357c37801732721a26c99e4491adf47cf0
+>>>>>>> 8f3430b6e71f399adad913d7f180d3719818a8cf
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Pang-Jaruphong"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Pang-Jaruphong/GestionAbsences.git",
+    "accountId": "dfb7ca57-8b0a-4121-a46c-cc109de26f54"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="38TCrFQCsed1bVJdtUof1yS6he1" />
+=======
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -36,10 +75,35 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="38FCHKSE1M0h9qS9z3uZn7u4loM" />
+>>>>>>> a72916357c37801732721a26c99e4491adf47cf0
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.143" />
+=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Node.js.dbabsences.js.executor&quot;: &quot;Run&quot;,
@@ -76,11 +140,21 @@
       <set>
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
         <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+>>>>>>> a72916357c37801732721a26c99e4491adf47cf0
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="d34a7dbb-7614-445a-a58c-d2cb1b69e6f0" name="Changes" comment="" />
+      <created>1768814370705</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768814370705</updated>
+      <workItem from="1768814371812" duration="6115000" />
+    </task>
+=======
       <changelist id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="" />
       <created>1768385842631</created>
       <option name="number" value="Default" />
@@ -90,9 +164,16 @@
       <workItem from="1768394328398" duration="18183000" />
       <workItem from="1768555330108" duration="11371000" />
       <workItem from="1768813739998" duration="14374000" />
+<<<<<<< HEAD
+      <workItem from="1768912263818" duration="1545000" />
+=======
       <workItem from="1768912263818" duration="30050000" />
       <workItem from="1769066445488" duration="50000" />
+<<<<<<< HEAD
       <workItem from="1769066764819" duration="836000" />
+=======
+>>>>>>> fb7e79ad2357b62b7b5d43aad9fbf483c7cb62ad
+>>>>>>> 8f3430b6e71f399adad913d7f180d3719818a8cf
     </task>
     <task id="LOCAL-00001" summary="Modifier le script">
       <option name="closed" value="true" />
@@ -111,13 +192,17 @@
       <updated>1768817835699</updated>
     </task>
     <option name="localTasksCounter" value="3" />
+>>>>>>> a72916357c37801732721a26c99e4491adf47cf0
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modifier le script" />
     <option name="LAST_COMMIT_MESSAGE" value="Modifier le script" />
   </component>
+>>>>>>> a72916357c37801732721a26c99e4491adf47cf0
 </project>

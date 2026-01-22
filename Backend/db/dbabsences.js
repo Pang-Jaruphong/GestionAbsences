@@ -49,6 +49,35 @@ const dbabsences = {
         } finally {
             if (con) await db.disconnectFromDatabase(con);
         }
+    },
+    getAbsencesByClasses : async (classeId) => {
+        let con;
+        try {
+            con = await db.connectToDatabase();
+            const sqlQuery = `
+                SELECT s.Firstname,
+                       s.Lastname,
+                       c.Name_year AS "Nom de la classe",
+                       a.Status,
+                       CASE WHEN a.JustifiedRuling = 1 THEN 'Oui' ELSE 'Non' END AS Justificatif,
+                       a.pattern                                                 AS Raison,
+                       h.Date,
+                       h.Begin,
+                       h.End,
+                       h.Period
+                FROM absences a
+                JOIN students s ON a.Students_id = s.id
+                JOIN hours h ON a.Hours_id = h.id
+                JOIN classes c ON s.Classes_id = c.id
+                WHERE s.Classes_id = ?`;
+            const [rows] = await con.query(sqlQuery, [classeId]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        } finally {
+            if (con) await db.disconnectFromDatabase(con);
+        }
     }
 }
 

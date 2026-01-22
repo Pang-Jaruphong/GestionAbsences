@@ -26,17 +26,19 @@ absencesRouter.get("/students/:id", async (req, res) => {
     }
 });
 
-/*
-absencesRouter.get("/ClassesAbsences/:id", async (req, res) => {
+absencesRouter.get("/Classes/:id", async (req, res) => {
     try {
-        const id = req.query.id;
-        const classesAbsences = await dbabsences.getAbsencesByClasses(id);
-        res.json(classesAbsences);
+        const classeId = req.params.id;
+        const AbsencesClasses = await dbabsences.getAbsencesByClasses(classeId);
+        if (AbsencesClasses.length === 0) {
+            return res.status(404).json({ message: "Aucun élève trouvé pour cette classe." });
+        }
+        res.json(AbsencesClasses);
     } catch (error) {
         res.status(500).json({error:error.message})
     }
 });
 
- */
+
 
 export default absencesRouter;

@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="Modifier le script">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/db/dbclassesHours.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/dbclassesHours.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/db/dbstudents.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/dbstudents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/routes/students.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/students.js" afterDir="false" />
-    </list>
+    <list default="true" id="d2e8a34f-30d0-4d96-8e9b-eeb9d7730001" name="Changes" comment="Modifier le script" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +92,7 @@
       <workItem from="1768813739998" duration="14374000" />
       <workItem from="1768912263818" duration="30050000" />
       <workItem from="1769066445488" duration="50000" />
+      <workItem from="1769066764819" duration="836000" />
     </task>
     <task id="LOCAL-00001" summary="Modifier le script">
       <option name="closed" value="true" />

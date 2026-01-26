@@ -10,6 +10,7 @@ import hoursRouter from "./routes/hours.js";
 import classesHoursRouter from "./routes/classesHours.js";
 
 import authRouter from "./routes/auth.js"
+
 const app = express();
 
 const port = process.env.PORT || 4000;

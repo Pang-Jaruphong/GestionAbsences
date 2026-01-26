@@ -2,6 +2,23 @@ import { db } from './database.js'; // Import de ton objet db
 import bcrypt from 'bcrypt'; // hasher le mot de passe
 
 const dbAuth = {
+    updateTeacherPassword: async (email, hashedPassword) => {
+        let con;
+        try {
+            con = await db.connectToDatabase();
+            const [result] = await con.execute(
+                'UPDATE teachers SET password = ? WHERE email = ?',
+                [hashedPassword, email]
+            );
+            return result;
+        } catch (error) {
+            console.error("Erreur lors de la mise à jour du mot de passe:", error);
+            throw error;
+        } finally {
+            if (con) await db.disconnectFromDatabase(con);
+        }
+    },
+
     // Fonction pour vérifier si un utilisateur existe
     findTeachersByEmail: async (email) => {
         let con;
@@ -11,7 +28,7 @@ const dbAuth = {
 
             // On exécute la requête
             const [rows] = await con.execute(
-                'SELECT * FROM Teachers WHERE Email = ?',
+                'SELECT * FROM teachers WHERE email = ?',
                 [email]
             );
 
@@ -28,13 +45,13 @@ const dbAuth = {
     },
 
     // Fonction pour créer un utilisateur (Inscription)
-    registerTeachers: async (Email, hashedPassword) => {
+    registerTeachers: async (email, hashedPassword) => {
         let con;
         try {
             con = await db.connectToDatabase();
             const [result] = await con.execute(
-                'INSERT INTO teachers (Email, Password) VALUES (?, ?)',
-                [Email, hashedPassword]
+                'INSERT INTO teachers (email, password) VALUES (?, ?)',
+                [email, hashedPassword]
             );
             return result.insertId;
         } catch (error) {

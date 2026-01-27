@@ -27,6 +27,7 @@ app.use('/absences', absencesRouter);
 app.use('/classes', classesRouter);
 app.use('/hours', hoursRouter);
 app.use('/classesHours', classesHoursRouter)
+app.use('/projectsTeachers', projectsTeachersRouter)
 
 // Importer les routes authentification
 app.use('/auth', authRouter);

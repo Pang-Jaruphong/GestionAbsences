@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS `MissClasse`.`Teachers` (
   `Lastname` VARCHAR(30) NOT NULL,
   `Firstname` VARCHAR(30) NOT NULL,
   `Acronyme` VARCHAR(3) NOT NULL,
-  `Email` VARCHAR(60) NOT NULL,
-  `Password` VARCHAR(10) NULL,
+  `email` VARCHAR(60) NOT NULL,
+  `password` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) VISIBLE,
+  UNIQUE INDEX `Email_UNIQUE` (`email` ASC) VISIBLE,
   UNIQUE INDEX `Acronyme_UNIQUE` (`Acronyme` ASC) VISIBLE)
 ENGINE = InnoDB;
 

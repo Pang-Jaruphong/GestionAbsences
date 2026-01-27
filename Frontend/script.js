@@ -7,8 +7,8 @@ logFormulaire.addEventListener('submit',async function (evenement) {
     evenement.preventDefault()
 
     // récupérer ce que l'utilisateur a tapé
-    const emailValue = document.getElementById('exampleInputEmail1').value;
-    const passwordValue = document.getElementById('exampleInputPassword1').value;
+    const email = document.getElementById('exampleInputEmail1').value;
+    const password = document.getElementById('exampleInputPassword1').value;
 
     try {
         // envoie des données au backend
@@ -19,18 +19,25 @@ logFormulaire.addEventListener('submit',async function (evenement) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                email: emailValue,
-                password: passwordValue
+                email: email,
+                password: password
             })
         });
         const data = await reponse.json();
 
-        if (reponse.ok) {
-            alert("Connexion réussie !");
-            window.location.href = "dashboard.html";
-        } else {
+        if (!reponse.ok) {
             alert("Erreur : " + data.message);
+            return;
         }
+
+        if (data.firstLogin){
+            localStorage.setItem("firstLoginEmail", email);
+            alert(data.message);
+            window.location.href = "create-password.html";
+            return
+        }
+        alert("Connexion réussie !");
+        window.location.href = "dashboard.html";
     } catch (error) {
         console.error("Erreur lors de la connexion :", error);
         alert("Impossible de contacter le serveur.");

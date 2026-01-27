@@ -8,6 +8,7 @@ import absencesRouter from "./routes/absences.js";
 import classesRouter from "./routes/classes.js";
 import hoursRouter from "./routes/hours.js";
 import classesHoursRouter from "./routes/classesHours.js";
+import projectsTeachersRouter from "./routes/ProjectsTeachers.js"
 
 import authRouter from "./routes/auth.js"
 
@@ -26,8 +27,8 @@ app.use('/teachers', teachersRouter);
 app.use('/absences', absencesRouter);
 app.use('/classes', classesRouter);
 app.use('/hours', hoursRouter);
-app.use('/classesHours', classesHoursRouter)
-app.use('/projectsTeachers', projectsTeachersRouter)
+app.use('/classesHours', classesHoursRouter);
+app.use('/projectsTeachers', projectsTeachersRouter);
 
 // Importer les routes authentification
 app.use('/auth', authRouter);

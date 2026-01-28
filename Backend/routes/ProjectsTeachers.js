@@ -41,5 +41,19 @@ projectsTeachersRouter.get("/projects/absences/:id", async (req, res) => {
         res.status(500).json({error:error.message})
     }
 });
+projectsTeachersRouter.get("/projects/stats/:id", async (req, res) => {
+    try {
+        const projectsId = req.params.id;
+        const results = await dbProjectsTeachers.getAbsencesStatsByStudents(projectsId);
+
+        if (results.length === 0) {
+            return res.status(404).json({ message: "Aucun projet trouvé pour cette ID." });
+        }
+
+        res.json(results);
+    } catch (error) {
+        res.status(500).json({error:error.message})
+    }
+});
 
 export default projectsTeachersRouter;

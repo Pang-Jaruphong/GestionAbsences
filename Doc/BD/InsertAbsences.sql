@@ -1,4 +1,4 @@
-pizzasUSE missclasse;
+USE missclasse;
 
 INSERT INTO projects (NAME, Name_groupe) VALUES
 ('Gestion des absences','truc machin'),
@@ -61,7 +61,7 @@ INSERT INTO hours (days, DATE, period, BEGIN, END) VALUES
 ('Vendredi', '2026-01-16', '3', '10:05', '10:50'),
 ('Vendredi', '2026-01-16', '4', '10:55', '11:40'),
 ('Vendredi', '2026-01-16', '5', '11:45', '12:30'),
-('Vendredi', '2026-01-16', '6', '12:35', '13:20');
+('Vendredi', '2026-01-16', '6', '12:35', '13:20'),
 ('Vendredi', '2026-01-16', '7', '13:20', '14:05'),
 ('Vendredi', '2026-01-16', '8', '14:10', '14:55'),
 ('Vendredi', '2026-01-16', '9', '15:05', '15:50'),
@@ -87,5 +87,5 @@ INSERT INTO students (Lastname, firstname, email, phone, classes_id, projects_id
 ('Yilmaz','Furkan','furkan.yilmaz@gmail.com','0765327532',3,1);
 
 INSERT INTO absences (STATUS, JustifiedRuling, Pattern, Hours_id, students_id) VALUES
-('Absent',0,'malade',1,1),students
+('Absent',0,'malade',1,1),
 ('Retard',1,'Beaucoup de trafic',2,2);

@@ -87,13 +87,13 @@ const dbProjectsTeachers = {
                        COUNT(DISTINCT a.id) AS "Total absences",
                        (SELECT COUNT(*)
                         FROM Classes_has_hours chh
-                        WHERE chh.Classes_id = s.Classes_id) AS "Total cours MA-Métier en %",
+                        WHERE chh.Classes_id = s.Classes_id) AS "Total cours MA-Métier",
                        ROUND(
                                COUNT(DISTINCT a.id) /
                                NULLIF((SELECT COUNT(*)
                                        FROM Classes_has_Hours chh
                                        WHERE chh.Classes_id = s.Classes_id), 0) * 100,2
-                       ) AS "Pourcentage Absences"
+                       ) AS "Pourcentage D'absences"
                 FROM Students s
                          LEFT JOIN Absences a ON s.id = a.students_id
                 WHERE s.Projects_id = ?

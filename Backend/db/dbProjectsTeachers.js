@@ -95,10 +95,10 @@ const dbProjectsTeachers = {
                                        WHERE chh.Classes_id = s.Classes_id), 0) * 100,2
                        ) AS "Pourcentage D'absences"
                 FROM Students s
-                         LEFT JOIN Absences a ON s.id = a.students_id
+                LEFT JOIN Absences a ON s.id = a.students_id
                 WHERE s.Projects_id = ?
                 GROUP BY s.id
-                ORDER BY \`Pourcentage Absences\` DESC`;
+                ORDER BY "Pourcentage D\'Absences" DESC`;
 
             const [rows] = await con.query(sqlQuery, [projectsId])
             return rows;

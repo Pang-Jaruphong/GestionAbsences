@@ -37,7 +37,7 @@ logFormulaire.addEventListener('submit',async function (evenement) {
             return
         }
         alert("Connexion réussie !");
-        window.location.href = "dashboard.html";
+        window.location.href = "../dashboard/dashboard.html";
     } catch (error) {
         console.error("Erreur lors de la connexion :", error);
         alert("Impossible de contacter le serveur.");

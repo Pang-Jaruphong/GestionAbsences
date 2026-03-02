@@ -79,6 +79,7 @@ const dbabsences = {
             if (con) await db.disconnectFromDatabase(con);
         }
     },
+<<<<<<< HEAD
     deleteAbsence: async (absenceId, teacherId) => {
         let con;
         try {
@@ -106,11 +107,24 @@ const dbabsences = {
 
         } catch (error) {
             console.error(error);
+
+    createAbsences : async (Hours_id, Students_id) => {
+        let con;
+        try {
+            con = await db.connectToDatabase();
+            const sqlQuery = `
+                INSERT INTO absences (Status, JustifiedRuling, Pattern, Hours_id, Students_id)
+                VALUES (?, ?, ?, ?, ?)`;
+            const values = ['Absent', 0, "Non spécifié", Hours_id, Students_id];
+            const [rows] = await con.query(sqlQuery, values);
+            return rows.insertId;
+        } catch (error) {
+            console.error("Erreur BDD lors de la création d'un client");
             throw error;
         } finally {
             if (con) await db.disconnectFromDatabase(con);
         }
     }
-}
+};
 
 export {dbabsences};

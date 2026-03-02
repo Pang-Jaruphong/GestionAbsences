@@ -9,6 +9,11 @@ async function fetchAndDisplayAbsences() {
 
         const absences = await response.json();
 
+        if (absences.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9">Aucune absence trouvée.</td></tr>';
+            return;
+        }
+
         // 2. On vide le message de chargement
         container.innerHTML = '';
 
@@ -23,9 +28,12 @@ async function fetchAndDisplayAbsences() {
                 <span>${abs.Lastname}</span>
                 <span>${abs.Firstname}</span>
                 <span>${abs.Status}</span>
-                <span>${abs.Period}</span>
-                <span>${abs.Raison || '-'}</span>
                 <span>${abs.Justificatif}</span>
+                <span>${abs.Raison || '-'}</span>
+                <span>${new Date(abs.Date).toLocaleDateString('fr-FR')}</span>                
+                <span>${abs.Period}</span>
+                <span>${abs.Begin}</span>
+                <span>${abs.End}</span>
             `;
 
             container.appendChild(row);

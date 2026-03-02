@@ -33,11 +33,11 @@ logFormulaire.addEventListener('submit',async function (evenement) {
         if (data.firstLogin){
             localStorage.setItem("firstLoginEmail", email);
             alert(data.message);
-            window.location.href = "create-password.html";
+            window.location.href = "../create-password/create-password.html";
             return
         }
         alert("Connexion réussie !");
-        window.location.href = "dashboard.html";
+        window.location.href = "../dashboard/dashboard.html";
     } catch (error) {
         console.error("Erreur lors de la connexion :", error);
         alert("Impossible de contacter le serveur.");

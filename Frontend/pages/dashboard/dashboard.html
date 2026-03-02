@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord | Mon App</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <img src="../../Img/logo%20seul%20vert.png" alt="Logo" class="logo-small">
+                <span>Mon App</span>
+            </div>
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+                <li><a href="../gestionneur-absences/gestionneur-absences.html"><i class=""></i> Gestionneur d'absences</a></li>
+                <li class="logout"><a href="../login/login.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <h1>Bienvenue dans votre espace</h1>
+                <div class="user-info">
+                    <span id="userEmailDisplay">Utilisateur</span>
+                    <div class="avatar"></div>
+                </div>
+            </header>
+
+            <section class="cards">
+                <div class="card">
+                    <h3>Activités</h3>
+                    <p>Aucune activité récente.</p>
+                </div>
+                <div class="card">
+                    <h3>Statistiques</h3>
+                    <p>Vos données apparaîtront ici.</p>
+                </div>
+                <div class="card">
+                    <h3>Messages</h3>
+                    <p>0 nouveau message.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

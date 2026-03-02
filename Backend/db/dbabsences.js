@@ -78,6 +78,38 @@ const dbabsences = {
         } finally {
             if (con) await db.disconnectFromDatabase(con);
         }
+    },
+    deleteAbsence: async (absenceId, teacherId) => {
+        let con;
+        try {
+            con = await db.connectToDatabase();
+
+            // Verification Query: Does this absence belong to a class/hour session 
+            // where the current teacher was assigned?
+            const checkQuery = `
+            SELECT a.id 
+            FROM Absences a
+            JOIN Students s ON a.Students_id = s.id
+            JOIN Classes_has_Hours chh ON (a.Hours_id = chh.Hours_id AND s.Classes_id = chh.Classes_id)
+            WHERE a.id = ? AND chh.Teachers_id = ?
+        `;
+
+            const [rows] = await con.query(checkQuery, [absenceId, teacherId]);
+
+            if (rows.length === 0) {
+                return { success: false, message: "Non autorisé ou absence introuvable." };
+            }
+
+            // Execution Query
+            await con.query('DELETE FROM Absences WHERE id = ?', [absenceId]);
+            return { success: true };
+
+        } catch (error) {
+            console.error(error);
+            throw error;
+        } finally {
+            if (con) await db.disconnectFromDatabase(con);
+        }
     }
 }
 

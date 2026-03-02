@@ -39,6 +39,21 @@ absencesRouter.get("/Classes/:id", async (req, res) => {
     }
 });
 
+absencesRouter.delete('/absences/:id', async (req, res) => {
+    const absenceId = req.params.id;
+    const teacherId = req.user.id;
 
+    try {
+        const result = await dbabsences.deleteAbsence(absenceId, teacherId);
+
+        if (result.success) {
+            res.status(200).json({ message: "Absence supprimée avec succès." });
+        } else {
+            res.status(403).json({ message: result.message });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Erreur lors de la suppression." });
+    }
+});
 
 export default absencesRouter;

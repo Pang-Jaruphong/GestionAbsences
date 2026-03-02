@@ -1,38 +1,44 @@
 .gestionneur-absences {
-    display: grid;
-    /* 6 columns defined once at the top level */
-    grid-template-columns: repeat(2, 1.5fr) 1fr 1fr 2fr 1fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     padding: 20px;
     background-color: #f9f9f9;
-    align-items: center;
-}
-
-/* 'display: contents' makes these containers "invisible" to the grid layout.
-   The children (p.header and span) will jump up to become direct
-   children of the .gestionneur-absences grid.
-*/
-.headers,
-.absences,
-.absence {
-    display: contents;
-}
-
-.header {
-    font-weight: bold;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin: 0;
-}
-
-/* Styling the individual cells (the spans inside each row) */
-.absence span {
-    padding: 12px 5px;
-    border-bottom: 1px solid #eee;
     font-family: sans-serif;
 }
 
-/* Hover effect for better UX when you have many rows */
-.absence:hover span {
+.headers, .absence {
+    display: grid;
+    /* 9 colonnes ajustables : les noms prennent un peu plus de place si besoin */
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 2fr 1.2fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 12px;
+}
+.headers {
+    font-weight: bold;
+    background-color: #eee;
+    border-bottom: 2px solid #333;
+    position: sticky;
+    top: 0;
+}
+
+.header {
+    margin: 0;
+}
+
+.absence {
+    border-bottom: 1px solid #eee;
+    background-color: white;
+}
+
+.absence:hover {
     background-color: #f0f4f8;
+}
+
+/* Style pour les spans à l'intérieur des lignes */
+.absence span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

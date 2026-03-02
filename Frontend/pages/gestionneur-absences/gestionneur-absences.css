@@ -10,7 +10,7 @@
 .headers, .absence {
     display: grid;
     /* 9 colonnes ajustables : les noms prennent un peu plus de place si besoin */
-    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 2fr 1.2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 2fr 1.2fr 1fr 1fr 1fr 0.5fr;
     gap: 10px;
     align-items: center;
     padding: 12px;
@@ -41,4 +41,19 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.btn-delete {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #cc0000;
 }

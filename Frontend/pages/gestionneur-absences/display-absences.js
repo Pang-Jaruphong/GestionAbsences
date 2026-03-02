@@ -34,8 +34,11 @@ async function fetchAndDisplayAbsences() {
                 <span>${abs.Period}</span>
                 <span>${abs.Begin}</span>
                 <span>${abs.End}</span>
-            `;
+                <button class="btn-delete" data-id="${abs.id}">✕</button>            
+`;
 
+            const deleteBtn = row.querySelector('.btn-delete');
+            deleteBtn.addEventListener('click', () => deleteAbsence(abs.id, row));
             container.appendChild(row);
         });
 

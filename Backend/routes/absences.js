@@ -39,6 +39,21 @@ absencesRouter.get("/Classes/:id", async (req, res) => {
     }
 });
 
+absencesRouter.post('/add', async (req, res) => {
+    try {
+        const { Hours_id, Students_id} = req.body;
+
+        if (!Hours_id || !Students_id) {
+            return res.status(400).json({ message : "Données manquantes : élève ou heure"})
+        }
+
+        const newID = await dbabsences.createAbsences(Hours_id, Students_id);
+        res.status(201).json({ message : "Absence enregistrée", id: newID});
+    } catch (error) {
+        res.status(500).json({error:error.message});
+    }
+});
+
 
 
 export default absencesRouter;

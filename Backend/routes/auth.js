@@ -9,7 +9,7 @@ const authRouter = express.Router();
 
 // --- 1. REQUEST ACCESS (Send Email with Token) ---
 // Used for both first-time password setup and password resets
-authRouter.post('"/request-access"', async (req, res) => {
+authRouter.post('/request-access', async (req, res) => {
     const { email } = req.body;
 
     try {

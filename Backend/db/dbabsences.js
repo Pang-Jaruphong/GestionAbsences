@@ -69,6 +69,57 @@ const dbabsences = {
                 JOIN students s ON a.Students_id = s.id
                 JOIN hours h ON a.Hours_id = h.id
                 JOIN classes c ON s.Classes_id = c.id
+                WHERE s.Classes_id = ?
+                ORDER BY s.Firstname, s.Lastname`;
+            const [rows] = await con.query(sqlQuery, [classeId]);
+
+            // Logic to group by students
+            const grouped = row.reduce((acc, row) => {
+                const studentId = row.studentId;
+                if (!acc[studentId]) {
+                    acc[studentId] = {
+                        student : `${row.Firstname} ${row.Lastname}`,
+                        className: row.ClasseName,
+                        absence : []
+                    };
+                }
+                // Absence's liste
+                acc[studentId].absences.push({
+                    status: row.Status
+                });
+            })
+            return rows;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        } finally {
+            if (con) await db.disconnectFromDatabase(con);
+        }
+    },
+
+    getAbsencesProjects : async (projectId) => {
+        let con;
+        try {
+            con = await db.connectToDatabase();
+            const sqlQuery = `
+                SELECT 
+                    p.name,
+                    p.Name_groupe,
+                    s.Firstname,
+                    s.Lastname,
+                    c.Name_year AS "Nom de la classe",
+                    a.Status,
+                    CASE WHEN a.JustifiedRuling = 1 THEN 'Oui' ELSE 'Non' END AS Justificatif,
+                    a.pattern                                                 AS Raison,
+                    h.Date,
+                    h.Begin,
+                    h.End,
+                    h.Period
+                FROM absences a
+                JOIN students s ON a.Students_id = s.id
+                JOIN hours h ON a.Hours_id = h.id
+                JOIN classes c ON s.Classes_id = c.id
+                JOIN proects p ON 
                 WHERE s.Classes_id = ?`;
             const [rows] = await con.query(sqlQuery, [classeId]);
             return rows;
@@ -79,6 +130,7 @@ const dbabsences = {
             if (con) await db.disconnectFromDatabase(con);
         }
     },
+
     deleteAbsence: async (absenceId, teacherId) => {
         let con;
         try {

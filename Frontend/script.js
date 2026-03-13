@@ -36,6 +36,7 @@ logFormulaire.addEventListener('submit',async function (evenement) {
             window.location.href = "../create-password/create-password.html";
             return
         }
+        localStorage.setItem('token', data.token);
         alert("Connexion réussie !");
         window.location.href = "../dashboard/dashboard.html";
     } catch (error) {

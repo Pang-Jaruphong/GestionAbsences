@@ -68,6 +68,12 @@ Exemples :
 npm install
 ```
 
+### Lancer en prod
+
+```powershell
+npm start
+```
+
 ### Lancer en dev
 
 #### Option A — standard

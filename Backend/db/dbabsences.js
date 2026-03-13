@@ -7,7 +7,7 @@ const dbabsences = {
             con = await db.connectToDatabase();
             const sqlQuery = `
                 SELECT 
-                    s.Firstname, s.Lastname, a.Status,
+                    a.id, s.Firstname, s.Lastname, a.Status,
                     CASE WHEN a.JustifiedRuling = 1 THEN 'Oui' ELSE 'Non' END AS Justificatif,
                     a.pattern AS Raison, h.Date, h.Begin, h.End, h.Period
                 FROM absences a
@@ -74,6 +74,43 @@ const dbabsences = {
             return rows;
         } catch (error) {
             console.error(error);
+            throw error;
+        } finally {
+            if (con) await db.disconnectFromDatabase(con);
+        }
+    },
+    updateAbsence: async (absenceId, teacherId, updateData) => {
+        let con;
+        try {
+            con = await db.connectToDatabase();
+
+            // 1. Security: Remove 'JustifiedRuling' if it exists in the payload
+            // This ensures the "Justifié" field cannot be modified by this route
+            const { Status, Pattern } = updateData;
+
+            // 2. Update with Join-like Verification
+            // We only update if the absence belongs to a session assigned to this teacher
+            const sqlQuery = `
+            UPDATE Absences a
+            JOIN Students s ON a.Students_id = s.id
+            JOIN Classes_has_Hours chh ON (a.Hours_id = chh.Hours_id AND s.Classes_id = chh.Classes_id)
+            SET a.Status = ?, a.Pattern = ?
+            WHERE a.id = ? AND chh.Teachers_id = ?
+        `;
+
+            const [result] = await con.query(sqlQuery, [Status, Pattern, absenceId, teacherId]);
+
+            if (result.affectedRows === 0) {
+                return {
+                    success: false,
+                    message: "Modification refusée : Vous n'étiez pas l'enseignant présent ou l'absence n'existe pas."
+                };
+            }
+
+            return { success: true };
+
+        } catch (error) {
+            console.error("SQL Error:", error);
             throw error;
         } finally {
             if (con) await db.disconnectFromDatabase(con);

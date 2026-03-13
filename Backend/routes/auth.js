@@ -1,7 +1,7 @@
 import express from "express";
 import bcrypt from "bcrypt";
-
 import {dbAuth} from '../db/dbAuth.js'
+import jwt from 'jsonwebtoken';
 
 const authRouter = express.Router();
 
@@ -75,8 +75,16 @@ authRouter.post('/login', async (req, res) => {
         if (!isMatch) {
             return res.status(401).json({ message: "Email ou mot de passe incorrect." });
         }
+
+        const token = jwt.sign(
+            { id: user.id },
+            process.env.SECRET_KEY,
+            { expiresIn: "2h" }
+        )
+
         res.json({
             message: "Connexion réussie !",
+            token: token,
             user: {
                 id: user.id,
                 email: user.email

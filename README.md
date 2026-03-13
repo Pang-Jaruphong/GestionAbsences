@@ -1,9 +1,8 @@
 # GestionAbsences
 ## Participants
 Jaruphong Plancherel  
-Kodjo Attivon  
-Maxime Ernst  
-Elod Arifi  
+Ahmet Karabulut  
+David Galindo  
 
 ## Frontend
 Doc : README dans la feature/frontend

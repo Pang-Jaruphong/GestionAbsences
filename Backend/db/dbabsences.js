@@ -70,25 +70,32 @@ const dbabsences = {
                 JOIN hours h ON a.Hours_id = h.id
                 JOIN classes c ON s.Classes_id = c.id
                 WHERE s.Classes_id = ?
-                ORDER BY s.Firstname, s.Lastname`;
+                ORDER BY s.Firstname, s.Lastname, h.Date`;
             const [rows] = await con.query(sqlQuery, [classeId]);
 
             // Logic to group by students
-            const grouped = row.reduce((acc, row) => {
-                const studentId = row.studentId;
+            const groupedMap = rows.reduce((acc, row) => {
+                const studentId = rows.studentId;
                 if (!acc[studentId]) {
                     acc[studentId] = {
-                        student : `${row.Firstname} ${row.Lastname}`,
+                        studentName : `${row.Firstname} ${row.Lastname}`,
                         className: row.ClasseName,
                         absence : []
                     };
                 }
                 // Absence's liste
                 acc[studentId].absences.push({
-                    status: row.Status
+                    Status: row.Status,
+                    justifiedRuling: row.JustifiedRuling,
+                    pattern: row.pattern,
+                    date: row.Date,
+                    begin: row.Begin,
+                    end: row.End,
+                    period: row.Period
                 });
-            })
-            return rows;
+                return acc; // return accumulateur
+            }, {})
+            return Object.values(groupedMap)
         } catch (error) {
             console.error(error);
             throw error;
@@ -97,7 +104,7 @@ const dbabsences = {
         }
     },
 
-    getAbsencesProjects : async (projectId) => {
+    getAbsencesByProjects : async (projectId) => {
         let con;
         try {
             con = await db.connectToDatabase();
@@ -120,8 +127,8 @@ const dbabsences = {
                 JOIN hours h ON a.Hours_id = h.id
                 JOIN classes c ON s.Classes_id = c.id
                 JOIN proects p ON 
-                WHERE s.Classes_id = ?`;
-            const [rows] = await con.query(sqlQuery, [classeId]);
+                WHERE p.projects_id = ?`;
+            const [rows] = await con.query(sqlQuery, [projectId]);
             return rows;
         } catch (error) {
             console.error(error);

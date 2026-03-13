@@ -38,6 +38,19 @@ absencesRouter.get("/Classes/:id", async (req, res) => {
         res.status(500).json({error:error.message})
     }
 });
+
+absencesRouter.get("/Projects/:id", async (req, res) => {
+    try {
+        const classeId = req.params.id;
+        const AbsencesClasses = await dbabsences.getAbsencesByClasses(classeId);
+        if (AbsencesClasses.length === 0) {
+            return res.status(404).json({ message: "Aucun élève trouvé pour cette classe." });
+        }
+        res.json(AbsencesClasses);
+    } catch (error) {
+        res.status(500).json({error:error.message})
+    }
+});
 absencesRouter.post('/add', async (req, res) => {
     try {
         const { Hours_id, Students_id} = req.body;

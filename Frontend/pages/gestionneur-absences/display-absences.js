@@ -38,7 +38,29 @@ async function fetchAndDisplayAbsences() {
 `;
 
             const deleteBtn = row.querySelector('.btn-delete');
-            deleteBtn.addEventListener('click', () => deleteAbsence(abs.id, row));
+            deleteBtn.addEventListener('click', async () => {
+                deleteBtn.disabled = true;
+
+                try {
+                    const response = await fetch(`http://localhost:4000/absences/${abs.id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+
+                    if (response.ok) {
+                        row.remove();
+                        console.log("Suppression réussie côté serveur et client.");
+                    } else {
+                        const data = await response.json();
+                        alert(data.message || "Erreur lors de la suppression");
+                        deleteBtn.disabled = false;
+                    }
+                } catch (error) {
+                    console.error("Erreur fetch:", error);
+                }
+            });
             container.appendChild(row);
         });
 

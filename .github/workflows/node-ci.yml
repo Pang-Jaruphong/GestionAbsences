@@ -23,15 +23,18 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm' # Speeds up future runs by caching node_modules
+          cache-dependency-path: './Backend/package-lock.json'
 
       - name: Install dependencies
         run: npm ci # 'ci' is faster and more reliable than 'install' in CI envs
+        working-directory: ./Backend
 
       - name: Run Linting
         run: npm run lint --if-present
 
       - name: Run Tests
         run: npm test
+        working-directory: ./Backend
 #  deploy:
 #    needs: build # Only runs if build job passes
 #    if: github.ref == 'refs/heads/main'

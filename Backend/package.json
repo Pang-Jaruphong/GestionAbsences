@@ -27,5 +27,8 @@
     "mysql2": "^3.16.0",
     "nodemailer": "^8.0.1",
     "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0"
   }
 }

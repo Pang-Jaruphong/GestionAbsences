@@ -41,12 +41,12 @@ absencesRouter.get("/Classes/:id", async (req, res) => {
 
 absencesRouter.get("/Projects/:id", async (req, res) => {
     try {
-        const classeId = req.params.id;
-        const AbsencesClasses = await dbabsences.getAbsencesByClasses(classeId);
-        if (AbsencesClasses.length === 0) {
-            return res.status(404).json({ message: "Aucun élève trouvé pour cette classe." });
+        const projectId = req.params.id;
+        const AbsencesProjects = await dbabsences.getAbsencesByProjects(projectId);
+        if (AbsencesProjects.length === 0) {
+            return res.status(404).json({ message: "Aucun élève absence de ce projet." });
         }
-        res.json(AbsencesClasses);
+        res.json(AbsencesProjects);
     } catch (error) {
         res.status(500).json({error:error.message})
     }

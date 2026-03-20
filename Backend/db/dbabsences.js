@@ -111,6 +111,7 @@ const dbabsences = {
             con = await db.connectToDatabase();
             const sqlQuery = `
                 SELECT 
+                    p.id AS studentId,
                     p.name,
                     p.Name_groupe,
                     s.Firstname,
@@ -127,10 +128,33 @@ const dbabsences = {
                 JOIN students s ON a.Students_id = s.id
                 JOIN hours h ON a.Hours_id = h.id
                 JOIN classes c ON s.Classes_id = c.id
-                JOIN proects p ON 
-                WHERE p.projects_id = ?`;
+                JOIN proects p ON s.projects_id = p.id
+                WHERE p.id = ?`;
             const [rows] = await con.query(sqlQuery, [projectId]);
-            return rows;
+
+            // Logic to group by students and projects
+            const groupedMap = rows.reduce((acc, row) => {
+                const studentId = row.studentId;
+                if (!acc[studentId]) {
+                    acc[studentId] = {
+                        studentName : `${row.Firstname} ${row.Lastname}`,
+                        className: row.classeName,
+                        absences : []
+                    };
+                }
+                // Absence's liste
+                acc[studentId].absences.push({
+                    Status: row.Status,
+                    justifiedRuling: row.Justificatif,
+                    pattern: row.pattern,
+                    date: row.Date,
+                    begin: row.Begin,
+                    end: row.End,
+                    period: row.Period
+                });
+                return acc; // return accumulateur
+            }, {})
+            return Object.values(groupedMap)
         } catch (error) {
             console.error(error);
             throw error;

@@ -55,7 +55,8 @@ const dbabsences = {
         try {
             con = await db.connectToDatabase();
             const sqlQuery = `
-                SELECT s.Firstname,
+                SELECT s.id AS studentId,
+                       s.Firstname,
                        s.Lastname,
                        c.Name_year AS "Nom de la classe",
                        a.Status,
@@ -75,18 +76,18 @@ const dbabsences = {
 
             // Logic to group by students
             const groupedMap = rows.reduce((acc, row) => {
-                const studentId = rows.studentId;
+                const studentId = row.studentId;
                 if (!acc[studentId]) {
                     acc[studentId] = {
                         studentName : `${row.Firstname} ${row.Lastname}`,
-                        className: row.ClasseName,
-                        absence : []
+                        className: row.classeName,
+                        absences : []
                     };
                 }
                 // Absence's liste
                 acc[studentId].absences.push({
                     Status: row.Status,
-                    justifiedRuling: row.JustifiedRuling,
+                    justifiedRuling: row.Justificatif,
                     pattern: row.pattern,
                     date: row.Date,
                     begin: row.Begin,

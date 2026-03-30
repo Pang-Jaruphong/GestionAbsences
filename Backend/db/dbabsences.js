@@ -128,8 +128,9 @@ const dbabsences = {
                 JOIN students s ON a.Students_id = s.id
                 JOIN hours h ON a.Hours_id = h.id
                 JOIN classes c ON s.Classes_id = c.id
-                JOIN proects p ON s.projects_id = p.id
-                WHERE p.id = ?`;
+                JOIN projects p ON s.projects_id = p.id
+                WHERE p.id = ?
+                ORDER BY s.Firstname, s.Lastname, h.Date`;
             const [rows] = await con.query(sqlQuery, [projectId]);
 
             // Logic to group by students and projects

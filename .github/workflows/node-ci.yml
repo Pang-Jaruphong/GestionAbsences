@@ -1,7 +1,7 @@
 name: Build, Test and Push to GHCR
 on:
   push:
-    branches: [ "main", "develop", "feature/git-action-CI" ]
+    branches: [ "main", "develop", "feature/docker-deployment" ]
     tags: [ 'v*.*.*']
   pull_request:
     branches: [ "main" ]

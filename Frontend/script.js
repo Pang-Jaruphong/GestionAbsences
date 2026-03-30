@@ -7,8 +7,8 @@ logFormulaire.addEventListener('submit',async function (evenement) {
     evenement.preventDefault()
 
     // récupérer ce que l'utilisateur a tapé
-    const email = document.getElementById('exampleInputEmail1').value;
-    const password = document.getElementById('exampleInputPassword1').value;
+    const email = document.getElementById('emailInput').value;
+    const password = document.getElementById('passwordInput').value;
 
     try {
         // envoie des données au backend
@@ -30,17 +30,32 @@ logFormulaire.addEventListener('submit',async function (evenement) {
             return;
         }
 
-        if (data.firstLogin){
-            localStorage.setItem("firstLoginEmail", email);
-            alert(data.message);
-            window.location.href = "../create-password/create-password.html";
-            return
+        // Handle FIRST LOGIN (No password set yet)
+        if (data.firstLogin) {
+            alert("Welcome! Since this is your first time, we are sending an activation link to your email.");
+            
+            // Trigger the email sending process automatically
+            await fetch('http://localhost:4000/auth/request-access', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            });
+
+            alert("Please check your inbox (and spam) to set up your password. The link expires in 20 minutes.");
+            return; 
         }
-        localStorage.setItem('token', data.token);
-        alert("Connexion réussie !");
+
+        // Handle SUCCESSFUL LOGIN
+        alert("Login successful! Redirecting...");
+        
+        // Store user email for the dashboard display
+        localStorage.setItem("userEmail", email);
+        
+        // Go to dashboard
         window.location.href = "../dashboard/dashboard.html";
+
     } catch (error) {
-        console.error("Erreur lors de la connexion :", error);
-        alert("Impossible de contacter le serveur.");
+        console.error("Connection error:", error);
+        alert("Unable to contact the server. Please check if your backend is running on port 4000.");
     }
 });

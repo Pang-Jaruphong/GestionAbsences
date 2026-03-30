@@ -1,6 +1,5 @@
 import express from "express";
 import {dbabsences} from '../db/dbabsences.js'
-import {authenticateToken} from '../authMiddleware.js'
 
 const absencesRouter = express.Router();
 
@@ -40,9 +39,7 @@ absencesRouter.get("/Classes/:id", async (req, res) => {
     }
 });
 
-absencesRouter.delete('/:id', authenticateToken, async (req, res) => {
-    console.log("ID Absence à supprimer :", req.params.id);
-    console.log("ID Prof (via Token) :", req.user.id); // <--- Vérifie si cet ID est bien celui attendu
+absencesRouter.delete('/absences/:id', async (req, res) => {
     const absenceId = req.params.id;
     const teacherId = req.user.id;
 

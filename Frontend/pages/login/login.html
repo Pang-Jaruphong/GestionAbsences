@@ -1,61 +1,31 @@
 <!doctype html>
-<html lang="fr">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <title>Gestion des absences</title>
-  </head>
-  <body>
-    <img class="imgfond" src="../../Img/login_fond.png" alt="Login Image" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Attendance Management - Login</title>
+</head>
+<body>
+    <img class="imgfond" src="../../Img/login_fond.png" alt="Background" />
     <section class="login">
-      <div class="img"><img src="../../Img/login_fond.png" alt="Login Image" /></div>
       <div class="boxForm">
-        <img class="logoVert" src="../../Img/logo%20seul%20vert.png" alt="" />
-        <form class="formLogin">
+        <img class="logoVert" src="../../Img/logo%20seul%20vert.png" alt="Logo" />
+        <form class="formLogin" id="loginForm">
           <h1>Login</h1>
-          <br />
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailInput" required />
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Password</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" />
           </div>
-          <br />
-
-          <button type="submit" class="container-fluid btn btn-primary">
-            Submit
-          </button>
+          <button type="submit" class="container-fluid btn btn-primary">Login</button>
         </form>
       </div>
     </section>
-
     <script src="../../script.js"></script>
-  </body>
+</body>
 </html>
